@@ -78,3 +78,10 @@ p {
 img {
   width: 100%;
 }
+
+/* //write a media qurry for a :placeholder-shown */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 20px;
+  }
+}
