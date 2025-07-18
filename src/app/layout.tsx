@@ -8,7 +8,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Cafe Santosha - A hidden gem in Port Chalmers</title>
-        <link rel="stylesheet" type="text/css" href="@styles/style.css" />
         <meta
           name="description"
           content="Come enjoy rustic ambiance of this hidden gem.  At Cafe Santosha in Port Chalmers you will find warm welcoming staff, Good Fortune coffee and a cabinet bursting with freshly baked goods."
