@@ -2,7 +2,6 @@
   "name": "cafe_santosha",
   "version": "1.0.0",
   "description": "A website for Cafe Santosha, showcasing its menu and services.",
-  "main": "index.js",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
