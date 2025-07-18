@@ -1,8 +1,16 @@
+import Image from 'next/image'
+
 export default function Home() {
   return (
     <>
-      <div className=".content-wrapper">
-        <img src="/cafe.jpg" alt="Cafe Santosha" />
+      <div className="content-wrapper">
+        <Image
+          src="/cafe.jpg"
+          alt="Cafe Santosha"
+          width={800}
+          height={400}
+          style={{ width: '100%', height: 'auto' }}
+        />
         <header>
           <h1>Cafe Santosha</h1>
           <div className="definition">
