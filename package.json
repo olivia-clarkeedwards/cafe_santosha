@@ -1,0 +1,33 @@
+{
+  "name": "cafe_santosha",
+  "version": "1.0.0",
+  "description": "A website for Cafe Santosha, showcasing its menu and services.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "cafe",
+    "coffee",
+    "snacks"
+  ],
+  "author": "Olivia Clarke-Edwards",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^15.4.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@types/node": "24.0.14",
+    "@types/react": "^19.1.8",
+    "eslint": "9.31.0",
+    "eslint-config-next": "15.4.2",
+    "eslint-config-prettier": "^10.1.8",
+    "typescript": "5.8.3"
+  }
+}
