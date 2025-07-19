@@ -28,6 +28,10 @@ export default function Home() {
         <p>
           <i>Available for functions and events.</i>
         </p>
+        <p>
+          <b>Sunday Sessions:</b> Pop in for live music, a drink and a bite to
+          eat. 3pm - 6pm every Sunday.
+        </p>
         <footer className="contact-details">
           <a
             href="https://www.google.com/maps/place/Cafe+Santosha/@-45.8160219,170.6209632,17z/data=!3m1!4b1!4m6!3m5!1s0xa8294d4fb9e58ac5:0x5f410a1b27ada69f!8m2!3d-45.8160219!4d170.6209632!16s%2Fg%2F11cly85dhg?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D"
