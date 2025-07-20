@@ -1,8 +1,20 @@
 import Image from 'next/image'
+import { ScrollingTextBanner } from 'components/scrolling-text-banner'
 
 export default function Home() {
   return (
     <div className="content-wrapper">
+      <ScrollingTextBanner
+        text={
+          'Sunday sessions: Live music, drinks, and good vibes from 3pm - 6pm every Sunday!'
+        }
+      />
+      <div>Sunday sessions banner</div>
+      <div>Main image with logo</div>
+      <div>Santosha banner</div>
+      <div>Contact and hours with cute animation</div>
+      <div>Santosha banner</div>
+      <div>Socials</div>
       <Image
         src="/cafe.jpg"
         alt="Cafe Santosha"
