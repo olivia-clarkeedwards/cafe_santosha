@@ -1,5 +1,15 @@
 @import 'tailwindcss';
 
+@theme {
+  --font-family-sigmar: var(--font-sigmar);
+  --font-family-seaweed-script: var(--font-seaweed-script);
+  --font-family-tan-ny: var(--font-tan-ny);
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -9,6 +19,19 @@
   }
 }
 
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 .animate-marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 80s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 80s linear infinite;
 }

@@ -3,37 +3,81 @@ import {
   Marquee,
   ScrollingTextBannerWrapper,
 } from 'components/scrolling-text-banner'
+import { seaweedScript, sigmar } from './layout'
 
 export default function Home() {
   return (
     <div className="content-wrapper">
       <ScrollingTextBannerWrapper>
-        <Marquee repeat={2}>
-          <p className="uppercase text-2xl">
+        <Marquee repeat={3}>
+          <p>
             Sunday sessions: Live music, drinks, and good vibes from 3pm - 6pm
             every Sunday!
           </p>
         </Marquee>
       </ScrollingTextBannerWrapper>
-      <Image
-        src="/cafe.jpg"
-        alt="Cafe Santosha"
-        width={800}
-        height={400}
-        style={{ width: '100%', height: 'auto' }}
-      />
-      <ScrollingTextBannerWrapper>
-        <Marquee repeat={10}>
-          <p className="uppercase text-2xl">CAFE SANTOSHA</p>
+      <div className="relative h-[calc(100vh-8rem)] w-full">
+        <Image
+          src="/tea-gold.jpg"
+          alt="Cafe Santosha"
+          width={800}
+          height={400}
+          className="w-full h-full object-cover"
+        />{' '}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className={`text-9xl text-white ${seaweedScript.className}`}>
+            Cafe Santosha
+          </h1>
+        </div>
+        <p className="absolute bottom-1.5 right-1.5 text-stone-100 text-xs">
+          Photo by{' '}
+          <a href="https://unsplash.com/@struvictoryart?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+            Victoria Strukovskaya
+          </a>{' '}
+          on{' '}
+          <a href="https://unsplash.com/photos/white-and-brown-ceramic-teacup-on-table-XdPa9HTknDM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+            Unsplash
+          </a>
+        </p>
+      </div>
+
+      <ScrollingTextBannerWrapper className="bg-yellow-500 text-amber-800">
+        <Marquee repeat={3} reverse={true}>
+          <p>SANTOSHA: deep, abiding, everlasting contentment</p>
         </Marquee>
       </ScrollingTextBannerWrapper>
-      <div>Sunday sessions banner</div>
-      <div>Main image with logo</div>
-      <div>Santosha banner</div>
-      <div>Contact and hours with cute animation</div>
-      <div>Santosha banner</div>
-      <div>Socials</div>
-      <header>
+      <div className="h-[calc(100vh-8rem)] py-20 w-full bg-amber-50 justify-center items-center flex flex-col text-amber-800">
+        <h1 className={`text-7xl ${seaweedScript.className}`}>Cafe Santosha</h1>
+        <Image
+          src="/cafe-santosha-logo.png"
+          alt="Cafe Santosha Logo"
+          width={200}
+          height={200}
+          className="rounded-full"
+        />
+        <div
+          className={`flex w-full justify-evenly items-center text-center uppercase text-xl ${sigmar.className}`}
+        >
+          <p className="max-w-1/4">
+            36 George Street
+            <br />
+            Port Chalmers
+          </p>
+          <p className="max-w-1/4">
+            8am - 4pm
+            <br /> Monday to Friday{' '}
+          </p>
+          <p className="max-w-1/4">0210 836 1524</p>
+          <p className="max-w-1/4">cafe_santosha@outlook.com</p>
+        </div>
+      </div>
+      <ScrollingTextBannerWrapper className="">
+        <Marquee repeat={6}>
+          <p>Ka kite anō: See you soon</p>
+        </Marquee>
+      </ScrollingTextBannerWrapper>
+      {/* <div>Socials</div> */}
+      {/* <header>
         <h1>Cafe Santosha</h1>
         <div className="definition">
           <h2 className="definition">santosha</h2>
@@ -41,8 +85,8 @@ export default function Home() {
           <p>noun</p>
           <p>deep, abiding, everlasting contentment.</p>
         </div>
-      </header>
-      <div className="content">
+      </header> */}
+      {/* <div className="content">
         <p>
           Enjoy the rustic ambiance of this hidden gem, warm welcoming staff,
           <br />
@@ -71,7 +115,7 @@ export default function Home() {
             cafe_santosha@outlook.com
           </a>
         </footer>
-      </div>
+      </div> */}
     </div>
   )
 }

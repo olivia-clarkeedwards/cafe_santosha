@@ -1,17 +1,30 @@
 import { cn } from 'lib/utils'
 import { ComponentPropsWithoutRef } from 'react'
+import { sigmar } from '../layout'
 
 type ScrollingTextBannerProps = {
+  /**
+   * Optional CSS class name to apply custom styles
+   */
+  className?: string
+  /**
+   * Content to be displayed in the scrolling text banner
+   */
   children: React.ReactNode
 }
 
 export function ScrollingTextBannerWrapper({
+  className,
   children,
 }: ScrollingTextBannerProps) {
   return (
     <div
       id="scrolling-text-banner"
-      className="bg-blue-500 py-2 text-white w-full text-nowrap overflow-x-hidden uppercase text-2xl"
+      className={cn(
+        'bg-amber-800 py-2 text-white w-full text-nowrap overflow-x-hidden text-2xl uppercase',
+        sigmar.className,
+        className
+      )}
     >
       {children}
     </div>
@@ -75,10 +88,10 @@ export function Marquee({
         <div
           key={divIndex}
           className={cn('flex shrink-0 items-center whitespace-nowrap', {
-            'animate-marquee': !vertical,
+            'animate-marquee': !vertical && !reverse,
+            'animate-marquee-reverse': !vertical && reverse,
             'animate-marquee-vertical': vertical,
             'group-hover:[animation-play-state:paused]': pauseOnHover,
-            '[animation-direction:reverse]': reverse,
           })}
           style={{
             minWidth: '100%',
