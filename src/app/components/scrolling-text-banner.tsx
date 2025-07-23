@@ -2,18 +2,18 @@ import { cn } from 'lib/utils'
 import { ComponentPropsWithoutRef } from 'react'
 
 type ScrollingTextBannerProps = {
-  text: string
+  children: React.ReactNode
 }
 
-export function ScrollingTextBanner({ text }: ScrollingTextBannerProps) {
+export function ScrollingTextBannerWrapper({
+  children,
+}: ScrollingTextBannerProps) {
   return (
     <div
       id="scrolling-text-banner"
-      className=" bg-blue-500 py-2 text-white w-full text-nowrap overflow-x-hidden"
+      className="bg-blue-500 py-2 text-white w-full text-nowrap overflow-x-hidden uppercase text-2xl"
     >
-      <Marquee>
-        <p className="uppercase text-2xl">{text}</p>
-      </Marquee>
+      {children}
     </div>
   )
 }
@@ -43,8 +43,8 @@ interface MarqueeProps extends ComponentPropsWithoutRef<'div'> {
    */
   vertical?: boolean
   /**
-   * Number of times to repeat the content
-   * @default 4
+   * Number of times to repeat the content within each animated div
+   * @default 6
    */
   repeat?: number
 }
@@ -55,14 +55,14 @@ export function Marquee({
   pauseOnHover = false,
   children,
   vertical = false,
-  repeat = 4,
+  repeat = 6,
   ...props
 }: MarqueeProps) {
   return (
     <div
       {...props}
       className={cn(
-        'group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]',
+        'group flex overflow-hidden [--duration:40s] [--gap:2rem]',
         {
           'flex-row': !vertical,
           'flex-col': vertical,
@@ -70,21 +70,36 @@ export function Marquee({
         className
       )}
     >
-      {Array(repeat)
-        .fill(0)
-        .map((_, i) => (
-          <div
-            key={i}
-            className={cn('flex shrink-0 justify-around [gap:var(--gap)]', {
-              'animate-marquee flex-row': !vertical,
-              'animate-marquee-vertical flex-col': vertical,
-              'group-hover:[animation-play-state:paused]': pauseOnHover,
-              '[animation-direction:reverse]': reverse,
-            })}
-          >
-            {children}
-          </div>
-        ))}
+      {/* Create 2 identical animated divs for seamless looping */}
+      {[0, 1].map((divIndex) => (
+        <div
+          key={divIndex}
+          className={cn('flex shrink-0 items-center whitespace-nowrap', {
+            'animate-marquee': !vertical,
+            'animate-marquee-vertical': vertical,
+            'group-hover:[animation-play-state:paused]': pauseOnHover,
+            '[animation-direction:reverse]': reverse,
+          })}
+          style={{
+            minWidth: '100%',
+          }}
+        >
+          {/* Repeat the children content within this div */}
+          {Array(repeat)
+            .fill(0)
+            .map((_, i) => (
+              <span
+                key={i}
+                className="flex items-center"
+                style={{
+                  paddingRight: 'var(--gap)',
+                }}
+              >
+                {children}
+              </span>
+            ))}
+        </div>
+      ))}
     </div>
   )
 }
