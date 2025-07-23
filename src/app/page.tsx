@@ -24,7 +24,7 @@ export default function Home() {
       />
       <ScrollingTextBannerWrapper>
         <Marquee repeat={10}>
-          <p className="uppercase text-2xl">SANTOSHA</p>
+          <p className="uppercase text-2xl">CAFE SANTOSHA</p>
         </Marquee>
       </ScrollingTextBannerWrapper>
       <div>Sunday sessions banner</div>
