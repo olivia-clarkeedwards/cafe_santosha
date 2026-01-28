@@ -17,19 +17,6 @@ export const sora = Sora({
   variable: '--font-sora',
 })
 
-// Configure your local font
-export const tanNewYork = localFont({
-  src: [
-    {
-      path: '../../public/fonts/tan-new-york.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-  ],
-  display: 'swap',
-  variable: '--font-tan-ny', // This creates a CSS variable you can use
-})
-
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html className="no-js" lang="en">
@@ -50,7 +37,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body className={`${tanNewYork.variable} `}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
