@@ -1,6 +1,6 @@
 import { cn } from 'lib/utils'
 import { ComponentPropsWithoutRef } from 'react'
-import { sigmar } from '../layout'
+import { sora } from '../layout'
 
 type ScrollingTextBannerProps = {
   /**
@@ -22,7 +22,7 @@ export function ScrollingTextBannerWrapper({
       id="scrolling-text-banner"
       className={cn(
         'bg-auba py-2 text-lila w-full text-nowrap overflow-x-hidden text-2xl uppercase',
-        sigmar.className,
+        sora.className,
         className
       )}
     >

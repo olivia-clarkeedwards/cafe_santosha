@@ -45,7 +45,7 @@ export default function Home() {
           alt="Cafe Santosha Logo"
           width={150}
           height={150}
-          className="rounded-full rotate-180 w-20 h-20 sm:w-28 sm:h-28 md:w-[150px] md:h-[150px]"
+          className="rounded-full rotate-180 rotate-180 w-20 h-10 sm:w-28 sm:h-14 md:w-[200px] md:h-[100px]"
         />
         <h1 className={`text-4xl sm:text-5xl md:text-7xl text-center ${seaweedScript.className}`}>Cafe Santosha</h1>
         <Image
@@ -53,7 +53,7 @@ export default function Home() {
           alt="Cafe Santosha Logo"
           width={150}
           height={150}
-          className="rounded-full mb-8 md:mb-16 w-20 h-20 sm:w-28 sm:h-28 md:w-[150px] md:h-[150px]"
+          className="rounded-full mb-8 md:mb-16 w-20 h-10 sm:w-28 sm:h-14 md:w-[200px] md:h-[100px]"
         />
         <div
           className={`flex flex-col md:flex-row flex-wrap w-full justify-center items-center text-center uppercase text-base sm:text-lg md:text-xl gap-6 md:gap-16 ${sigmar.className}`}
