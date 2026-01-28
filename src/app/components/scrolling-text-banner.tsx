@@ -1,0 +1,118 @@
+import { cn } from 'lib/utils'
+import { ComponentPropsWithoutRef } from 'react'
+import { sora } from '../fonts'
+
+type ScrollingTextBannerProps = {
+  /**
+   * Optional CSS class name to apply custom styles
+   */
+  className?: string
+  /**
+   * Content to be displayed in the scrolling text banner
+   */
+  children: React.ReactNode
+}
+
+export function ScrollingTextBannerWrapper({
+  className,
+  children,
+}: ScrollingTextBannerProps) {
+  return (
+    <div
+      id="scrolling-text-banner"
+      className={cn(
+        'bg-auba py-2 text-lila w-full text-nowrap overflow-x-hidden text-2xl uppercase',
+        sora.className,
+        className
+      )}
+    >
+      {children}
+    </div>
+  )
+}
+
+interface MarqueeProps extends ComponentPropsWithoutRef<'div'> {
+  /**
+   * Optional CSS class name to apply custom styles
+   */
+  className?: string
+  /**
+   * Whether to reverse the animation direction
+   * @default false
+   */
+  reverse?: boolean
+  /**
+   * Whether to pause the animation on hover
+   * @default false
+   */
+  pauseOnHover?: boolean
+  /**
+   * Content to be displayed in the marquee
+   */
+  children: React.ReactNode
+  /**
+   * Whether to animate vertically instead of horizontally
+   * @default false
+   */
+  vertical?: boolean
+  /**
+   * Number of times to repeat the content within each animated div
+   * @default 6
+   */
+  repeat?: number
+}
+
+export function Marquee({
+  className,
+  reverse = false,
+  pauseOnHover = false,
+  children,
+  vertical = false,
+  repeat = 6,
+  ...props
+}: MarqueeProps) {
+  return (
+    <div
+      {...props}
+      className={cn(
+        'group flex overflow-hidden [--duration:40s] [--gap:2rem]',
+        {
+          'flex-row': !vertical,
+          'flex-col': vertical,
+        },
+        className
+      )}
+    >
+      {/* Create 2 identical animated divs for seamless looping */}
+      {[0, 1].map((divIndex) => (
+        <div
+          key={divIndex}
+          className={cn('flex shrink-0 items-center whitespace-nowrap', {
+            'animate-marquee': !vertical && !reverse,
+            'animate-marquee-reverse': !vertical && reverse,
+            'animate-marquee-vertical': vertical,
+            'group-hover:[animation-play-state:paused]': pauseOnHover,
+          })}
+          style={{
+            minWidth: '100%',
+          }}
+        >
+          {/* Repeat the children content within this div */}
+          {Array(repeat)
+            .fill(0)
+            .map((_, i) => (
+              <span
+                key={i}
+                className="flex items-center"
+                style={{
+                  paddingRight: 'var(--gap)',
+                }}
+              >
+                {children}
+              </span>
+            ))}
+        </div>
+      ))}
+    </div>
+  )
+}
