@@ -1,15 +1,9 @@
 import { ReactNode } from 'react'
 import localFont from 'next/font/local'
-import { Sigmar, Seaweed_Script, Sora } from 'next/font/google'
+import { Seaweed_Script, Sora } from 'next/font/google'
 import './global.css'
 
 // Configure Google Fonts
-
-export const sigmar = Sigmar({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-sigmar',
-})
 
 export const seaweedScript = Seaweed_Script({
   subsets: ['latin'],

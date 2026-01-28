@@ -3,7 +3,7 @@ import {
   Marquee,
   ScrollingTextBannerWrapper,
 } from 'components/scrolling-text-banner'
-import { seaweedScript, sigmar } from './layout'
+import { seaweedScript, sora } from './layout'
 
 export default function Home() {
   return (
@@ -56,7 +56,7 @@ export default function Home() {
           className="rounded-full mb-8 md:mb-16 w-20 h-10 sm:w-28 sm:h-14 md:w-[200px] md:h-[100px]"
         />
         <div
-          className={`flex flex-col md:flex-row flex-wrap w-full justify-center items-center text-center uppercase text-base sm:text-lg md:text-xl gap-6 md:gap-16 ${sigmar.className}`}
+          className={`flex flex-col md:flex-row flex-wrap w-full justify-center items-center text-center uppercase text-base sm:text-lg md:text-xl gap-6 md:gap-16 ${sora.className}`}
         >
           <div>
             <p className="text-center">
