@@ -1,6 +1,6 @@
 import { cn } from 'lib/utils'
 import { ComponentPropsWithoutRef } from 'react'
-import { sora } from '../layout'
+import { sora } from '../fonts'
 
 type ScrollingTextBannerProps = {
   /**

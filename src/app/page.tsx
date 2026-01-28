@@ -3,7 +3,7 @@ import {
   Marquee,
   ScrollingTextBannerWrapper,
 } from 'components/scrolling-text-banner'
-import { seaweedScript, sora } from './layout'
+import { seaweedScript, sora } from './fonts'
 
 export default function Home() {
   return (
