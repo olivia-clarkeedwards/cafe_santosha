@@ -21,7 +21,7 @@ export function ScrollingTextBannerWrapper({
     <div
       id="scrolling-text-banner"
       className={cn(
-        'bg-amber-800 py-2 text-white w-full text-nowrap overflow-x-hidden text-2xl uppercase',
+        'bg-auba py-2 text-lila w-full text-nowrap overflow-x-hidden text-2xl uppercase',
         sigmar.className,
         className
       )}
