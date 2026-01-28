@@ -4,6 +4,11 @@
   --font-family-sigmar: var(--font-sigmar);
   --font-family-seaweed-script: var(--font-seaweed-script);
   --font-family-tan-ny: var(--font-tan-ny);
+
+  --color-primary: #D6A6EF;
+  --color-lila: #8272AC;
+  --color-auba: #1F1D23;
+  --color-viola: #687FDE;
 }
 
 body {
