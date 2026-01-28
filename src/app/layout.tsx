@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-import localFont from 'next/font/local'
 import { Seaweed_Script, Sora } from 'next/font/google'
 import './global.css'
 
